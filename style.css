@@ -1,0 +1,143 @@
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.app {
+    width: 100%;
+    max-width: 600px; /* Maximum width for larger screens */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Join Screen and Chat Screen */
+.join-screen,
+.chat-screen {
+    display: none;
+    flex-direction: column;
+}
+
+.join-screen.active,
+.chat-screen.active {
+    display: flex;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px; /* Padding for touch devices */
+    border-bottom: 1px solid #ccc;
+    background-color: #14a127;
+    position: relative; /* Change to relative */
+}
+
+/* Messages */
+.messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px; /* Added padding for better spacing */
+    margin: 20px 0; /* Add margin to create space above and below the messages */
+    position: relative; /* Ensure it stays below the header */
+}
+
+/* Message Styles */
+.message {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.my-message {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+}
+
+.other-message {
+    background-color: #fff;
+}
+
+.update {
+    font-style: italic;
+    text-align: center;
+    color: #888;
+}
+
+/* Input Box */
+.typebox {
+    display: flex;
+    padding: 10px; /* Padding for the footer */
+    background-color: #fff; /* Background color to match the header */
+    border-top: 1px solid #ccc;
+}
+
+/* Input Styles */
+input[type="text"] {
+    flex-grow: 1;
+    padding: 10px; /* Increased padding for touch devices */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px; /* Increased font size */
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+button {
+    padding: 10px 15px; /* Increased padding for touch devices */
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    margin-left: 5px;
+    font-size: 16px; /* Increased font size */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .app {
+        width: 95%; /* Adjust width for smaller screens */
+        max-width: none; /* Remove max-width for smaller devices */
+    }
+
+    .messages {
+        padding: 5px; /* Reduce padding for smaller screens */
+    }
+
+    input[type="text"] {
+        font-size: 14px; /* Adjust font size for smaller screens */
+        padding: 8px; /* Adjust padding for smaller screens */
+    }
+
+    button {
+        font-size: 14px; /* Adjust button font size for smaller screens */
+        padding: 8px 12px; /* Adjust button padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    input[type="text"],
+    button {
+        font-size: 12px; /* Further reduce font size for very small screens */
+        padding: 6px; /* Further reduce padding for very small screens */
+    }
+
+    .header, .typebox {
+        padding: 8px; /* Adjust padding for header and footer */
+    }
+}
